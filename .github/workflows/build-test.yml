@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@50fbc622fc4ef5163becd7fab6573eac35f8462e
+      - uses: actions/checkout@v2
 
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -30,6 +30,6 @@ jobs:
           poetry build
 
       - name: Upload coverage to codecov
-        uses: codecov/codecov-action@797e92895ec0eac368405352c0add9af878fe257  # v1
+        uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
