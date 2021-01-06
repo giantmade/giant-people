@@ -3,7 +3,7 @@ from django.db import models
 
 from filer.fields.image import FilerImageField
 
-from mixins import PublishingMixin, PublishingQuerySetMixin, TimestampMixin
+from mixins.models import PublishingMixin, PublishingQuerySetMixin, TimestampMixin
 
 
 class PersonQueryset(PublishingQuerySetMixin):
