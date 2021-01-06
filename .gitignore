@@ -8,3 +8,4 @@ dist
 .coverage
 test-reports/
 giant-people
+.vim
