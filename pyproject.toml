@@ -27,7 +27,7 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.6"
-giant-mixins = "^0.1.1"
+giant-mixins = "*"
 django-filer = "^1.7.1"
 
 [tool.poetry.dev-dependencies]
