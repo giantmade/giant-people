@@ -1,0 +1,10 @@
+.idea
+.vscode
+.pytest_cache
+*__pycache__
+*.egg-info
+poetry.lock
+dist
+.coverage
+test-reports/
+giant-people
