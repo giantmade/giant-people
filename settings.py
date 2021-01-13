@@ -24,7 +24,6 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "people",
 ]
-ROOT_URLCONF = "people.tests.urls"
 
 TEMPLATES = [
     {

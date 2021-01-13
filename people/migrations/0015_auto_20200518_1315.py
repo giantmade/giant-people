@@ -6,18 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('programmes', '0009_programme_intro'),
-        ('people', '0014_person_programme'),
+        ("people", "0014_person_programme"),
     ]
 
-    operations = [
-        migrations.RemoveField(
-            model_name='person',
-            name='programme',
-        ),
-        migrations.AddField(
-            model_name='person',
-            name='programme',
-            field=models.ManyToManyField(blank=True, related_name='persons_programme', to='programmes.Programme'),
-        ),
-    ]
+    operations = []

@@ -6,16 +6,11 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('people', '0006_auto_20200219_1032'),
+        ("people", "0006_auto_20200219_1032"),
     ]
 
     operations = [
         migrations.DeleteModel(
-            name='Tag',
-        ),
-        migrations.AlterField(
-            model_name='person',
-            name='tags',
-            field=models.ManyToManyField(blank=True, related_name='tag_people', to='tags.Tag'),
+            name="Tag",
         ),
     ]
