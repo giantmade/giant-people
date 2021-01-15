@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "giant-people"
-version = "0.1.2"
+version = "0.2"
 description = "A small reusable package that adds a People app to a project"
 authors = [
     "Will-Hoey <will.hoey@giantmade.com>",
@@ -43,6 +43,28 @@ pytest-mock = "^3.2.0"
 name = "TestPyPi"
 url = "https://test.pypi.org/simple/"
 secondary = true
+
+[tool.black]
+line-length = 99
+target-version = ['py36']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.ipython
+  | \.mypy_cache
+  | \.ropeproject
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+  | migrations
+)/
+'''
 
 [build-system]
 requires = ["poetry>=0.12"]
