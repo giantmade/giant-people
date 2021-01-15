@@ -19,4 +19,3 @@ class TestIndexView:
         client = Client()
         response = client.get(reverse("people:index"))
         assert response.status_code == 200
-

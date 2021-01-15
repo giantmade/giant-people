@@ -13,7 +13,9 @@ class Person(TimestampMixin, PublishingMixin):
 
     name = models.CharField(max_length=255)
     job_role = models.CharField(max_length=255, blank=True)
-    image = FilerImageField(related_name="person_image", null=True, on_delete=models.SET_NULL)
+    image = FilerImageField(
+        related_name="person_image", null=True, on_delete=models.SET_NULL
+    )
     summary = models.TextField(blank=True)
 
     # Contact/social details
@@ -43,4 +45,3 @@ class Person(TimestampMixin, PublishingMixin):
         Return string representation
         """
         return self.name
-

@@ -19,6 +19,8 @@ class PersonAdmin(admin.ModelAdmin):
         (None, {"fields": ["name", "job_role", "image", "summary"]}),
         ("Contact", {"fields": ["email", "phone_number", "linkedin_url", ""]}),
         ("Publish", {"fields": ["is_published", "publish_at"]}),
-        ("Meta Data", {"classes": ("collapse",), "fields": ["created_at", "updated_at"]}),
+        (
+            "Meta Data",
+            {"classes": ("collapse",), "fields": ["created_at", "updated_at"]},
+        ),
     ]
-
