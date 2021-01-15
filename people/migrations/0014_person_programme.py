@@ -7,14 +7,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('programmes', '0008_auto_20200501_1403'),
-        ('people', '0013_auto_20200409_1422'),
+        ("people", "0013_auto_20200409_1422"),
     ]
 
-    operations = [
-        migrations.AddField(
-            model_name='person',
-            name='programme',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='persons_programme', to='programmes.Programme'),
-        ),
-    ]
+    operations = []
