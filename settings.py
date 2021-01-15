@@ -52,3 +52,5 @@ LANGUAGE_CODE = "en-gb"
 LANGUAGES = [
     ("en-gb", "English"),
 ]
+
+ROOT_URLCONF = "people.tests.urls"
