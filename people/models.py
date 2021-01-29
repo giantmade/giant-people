@@ -15,7 +15,10 @@ class Person(TimestampMixin, PublishingMixin):
     job_role = models.CharField(max_length=255, blank=True)
     image = FilerImageField(related_name="person_image", null=True, on_delete=models.SET_NULL)
     summary = models.TextField(blank=True)
-
+    order = models.PositiveIntegerField(
+        default=0,
+        help_text="Set this to prioritise the order of the person, higher numbers are higher priority",  # noqa
+    )
     # Contact/social details
     linkedin_url = models.URLField(
         help_text="Enter the full URL of the LinkedIn page",
@@ -36,7 +39,7 @@ class Person(TimestampMixin, PublishingMixin):
     class Meta:
         verbose_name = "Person"
         verbose_name_plural = "People"
-        ordering = ["name"]
+        ordering = ["-order", "name"]
 
     def __str__(self):
         """
