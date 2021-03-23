@@ -1,5 +1,6 @@
 from django.core.validators import URLValidator
 from django.db import models
+from cms.models import CMSPlugin
 
 from filer.fields.image import FilerImageField
 
@@ -46,3 +47,46 @@ class Person(TimestampMixin, PublishingMixin):
         Return string representation
         """
         return self.name
+
+
+class PersonContainer(CMSPlugin):
+    """
+    Represents a selection of people relevant to the page.
+    """
+
+    def copy_relations(self, oldinstance):
+        """
+        Copy the relations from oldinstance and update the plugin field
+        """
+        self.people_cards.all().delete()
+        for item in oldinstance.people_cards.all():
+            item.pk = None
+            item.plugin = self
+            item.save()
+
+    def __str__(self):
+        """
+        String representation of the model object
+        """
+        return f"People Container {self.pk}"
+
+
+class PersonCard(models.Model):
+    """
+    Acts as a bridge between the people app and the people container plugin to allow for custom ordering
+    """
+
+    person = models.ForeignKey(to=Person, related_name="people_cards", on_delete=models.CASCADE)
+    plugin = models.ForeignKey(
+        to=PersonContainer, on_delete=models.CASCADE, related_name="people_cards"
+    )
+    card_order = models.PositiveIntegerField(default=0)
+
+    class Meta:
+        ordering = ("card_order",)
+
+    def __str__(self):
+        """
+        String representation of the object
+        """
+        return f"Person card for {self.person.name}"

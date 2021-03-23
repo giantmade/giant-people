@@ -15,6 +15,7 @@ INSTALLED_APPS = [
     "easy_thumbnails",
     "filer",
     "mptt",
+    "adminsortable2",
     "djangocms_admin_style",
     "django.contrib.admin",
     "django.contrib.auth",
