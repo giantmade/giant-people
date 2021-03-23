@@ -94,6 +94,17 @@ argon2 = ["argon2-cffi (>=16.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+category = "main"
+description = "Generic drag-and-drop sorting for the List, the Stacked- and the Tabular-Inlines Views in the Django Admin"
+name = "django-admin-sortable2"
+optional = false
+python-versions = "*"
+version = "0.7.8"
+
+[package.dependencies]
+Django = ">=1.8,<3.2"
+
+[[package]]
 category = "dev"
 description = "Class based template tags for Django"
 name = "django-classy-tags"
@@ -476,7 +487,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["pytest (>=3.5,<3.7.3 || >3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pytest-cov", "jaraco.test (>=3.2.0)", "jaraco.itertools", "func-timeout", "pytest-black (>=0.3.7)", "pytest-mypy"]
 
 [metadata]
-content-hash = "21add72f29979236364df5a0119a72bee2fe35e1cf4b1f6575c21a02d0e43868"
+content-hash = "cc833c10ce32823512cb664250910fafc4f3c0e1d51d3748c0fc40ce13491ad7"
 python-versions = "^3.6"
 
 [metadata.files]
@@ -558,6 +569,10 @@ coverage = [
 django = [
     {file = "Django-2.2-py3-none-any.whl", hash = "sha256:a2814bffd1f007805b19194eb0b9a331933b82bd5da1c3ba3d7b7ba16e06dc4b"},
     {file = "Django-2.2.tar.gz", hash = "sha256:7c3543e4fb070d14e10926189a7fcf42ba919263b7473dceaefce34d54e8a119"},
+]
+django-admin-sortable2 = [
+    {file = "django-admin-sortable2-0.7.8.tar.gz", hash = "sha256:d523388976c9254f130375cb16c636369e89a5fd1db7a025253aeb497ce6018e"},
+    {file = "django_admin_sortable2-0.7.8-py3-none-any.whl", hash = "sha256:b51a161b6dc69aedcba3c216df4aef58d54f389d0c4d2c720f59cf2d3f594c00"},
 ]
 django-classy-tags = [
     {file = "django-classy-tags-2.0.0.tar.gz", hash = "sha256:d59d98bdf96a764dcf7a2929a86439d023b283a9152492811c7e44fc47555bc9"},

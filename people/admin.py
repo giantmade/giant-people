@@ -11,7 +11,7 @@ class PersonAdmin(admin.ModelAdmin):
 
     list_display = ["name", "job_role", "order", "is_published"]
     search_fields = ["name", "job_role"]
-    list_editable =  ["order"]
+    list_editable = ["order"]
     readonly_fields = [
         "created_at",
         "updated_at",
