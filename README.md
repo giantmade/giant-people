@@ -2,7 +2,7 @@
 
 A re-usable package which can be used in any project that requires a generic `People` app. 
 
-This will include the basic formatting and functionality such as model creation via the admin.
+This will include the basic formatting and functionality such as model creation via the admin. The package also includes a cms plugin which allows a client to add a select number of people to a page and order them via a "drag and drop", provided by `django-admin-sortable2`. 
 
 ## Installation
 
@@ -16,6 +16,16 @@ The detail pages in this app use plugins which are not contained within this app
 In order to run `django-admin` commands you will need to set the `DJANGO_SETTINGS_MODULE` by running
 
     $ export DJANGO_SETTINGS_MODULE=settings
+
+## Configuration
+
+This application exposes the following settings:
+
+
+- `PEOPLE_ADMIN_LIST_DISPLAY` is the field list for the admin index. This must be a list.
+- `PEOPLE_ADMIN_SEARCH_FIELDS` is the fields that can be searched against in the admin. This must be a list.
+- `PEOPLE_ADMIN_FIELDSETS` allows the user to define the admin fieldset. This must be a list of two-tuples.
+- `PEOPLE_ADMIN_READONLY_FIELDS` allows the user to configure readonly fields in the admin. This must be a list.
 
 ## Preparing for release
  
