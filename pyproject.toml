@@ -31,6 +31,7 @@ giant-mixins = "*"
 django-filer = "*"
 django-admin-sortable2 = "*"
 django-polymorphic = "<=3.0.0"
+six = "^1.16.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
