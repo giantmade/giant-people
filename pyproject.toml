@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "giant-people"
-version = "0.4.1"
+version = "0.4.2"
 description = "A small reusable package that adds a People app to a project"
 authors = [
     "Will-Hoey <will.hoey@giantmade.com>",
@@ -28,8 +28,10 @@ packages = [
 [tool.poetry.dependencies]
 python = "^3.6"
 giant-mixins = "*"
-django-filer = "^1.7.1"
-django-admin-sortable2 = "^0.7.8"
+django-filer = "*"
+django-admin-sortable2 = "*"
+django-polymorphic = "<=3.0.0"
+six = "^1.16.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
