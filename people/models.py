@@ -7,7 +7,7 @@ from filer.fields.image import FilerImageField
 from mixins.models import PublishingMixin, PublishingQuerySetMixin, TimestampMixin
 
 
-class Person(TimestampMixin, PublishingMixin):
+class PersonAbstract(models.Model):
     """
     Represents a person object
     """
@@ -15,6 +15,10 @@ class Person(TimestampMixin, PublishingMixin):
     name = models.CharField(max_length=255)
     job_role = models.CharField(max_length=255, blank=True)
     image = FilerImageField(related_name="person_image", null=True, on_delete=models.SET_NULL)
+    quote = models.TextField(
+        blank=True,
+        help_text="Optional. A single paragraph. Quotation marks need to be added if intended",
+    )
     summary = models.TextField(blank=True)
     order = models.PositiveIntegerField(
         default=0,
@@ -35,18 +39,24 @@ class Person(TimestampMixin, PublishingMixin):
     phone_number = models.CharField(max_length=255, blank=True)
     email = models.EmailField(blank=True)
 
-    objects = PublishingQuerySetMixin.as_manager()
-
     class Meta:
-        verbose_name = "Person"
-        verbose_name_plural = "People"
-        ordering = ["-order", "name"]
+        abstract = True
 
     def __str__(self):
         """
         Return string representation
         """
         return self.name
+
+
+class Person(TimestampMixin, PublishingMixin, PersonAbstract):
+
+    objects = PublishingQuerySetMixin.as_manager()
+
+    class Meta:
+        verbose_name = "Person"
+        verbose_name_plural = "People"
+        ordering = ["-order", "name"]
 
 
 class PersonContainer(CMSPlugin):

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "giant-people"
-version = "0.4.2"
+version = "0.5.0"
 description = "A small reusable package that adds a People app to a project"
 authors = [
     "Will-Hoey <will.hoey@giantmade.com>",
@@ -35,7 +35,6 @@ six = "^1.16.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
-django = "2.2"
 django-cms = "^3.7.2"
 black = "^19.10b0"
 pytest-django = "^3.9.0"
